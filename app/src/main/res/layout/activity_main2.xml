@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.covid19help.MainActivity2">
+    tools:context=".MainActivity2">
 
 
     <ImageView
@@ -37,6 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:hint="@string/phone_number"
+        android:maxLength="15"
+        android:inputType="phone"
         android:textColor="@color/textColor"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"/>
@@ -46,6 +48,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_otp"
+        android:inputType="number"
+        android:maxLength="6"
         android:clickable="false"
         android:textColor="@color/textColor"
         android:layout_margin="20dp"/>
@@ -54,17 +58,20 @@
         android:id="@+id/btn_generate_otp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/generate_otp"
-        android:background="@color/colorAccent"
+        android:text="@string/generate_otp"
+        android:enabled="false"
         android:textColor="@color/textColor"
+        android:background="@drawable/buttons_state_selector"
         android:layout_margin="20dp"/>
+
     <Button
         android:id="@+id/btn_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/verify_sign_in"
-        android:background="@color/colorAccent"
+        android:text="@string/verify_sign_in"
+        android:enabled="false"
         android:textColor="@color/textColor"
+        android:background="@drawable/buttons_state_selector"
         android:layout_margin="20dp"/>
 
 </LinearLayout>

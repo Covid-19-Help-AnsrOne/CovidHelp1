@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -49,6 +52,10 @@ MainActivity2 extends AppCompatActivity {
         StartFirebaseLogin();
         phoneNumber2=etPhoneNumber.getText().toString().trim();
 
+        // Enable/disable the buttons.
+        enableOTPButton(etPhoneNumber, btnGenerateOTP, 10);
+        enableOTPButton(etOTP, btnSignIn, 6);
+
         btnGenerateOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +81,38 @@ MainActivity2 extends AppCompatActivity {
         });
     }
 
+
+
+    /**
+     * Only enable the buttons if there are correct number of digits.
+     * */
+    private void enableOTPButton(EditText toCheck, Button toEnable, int max) {
+        toCheck.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (toCheck.getText().toString().trim().length() < max) {
+                    toEnable.setEnabled(false);
+                    toEnable.setTextColor(ContextCompat.getColor(getApplicationContext(),
+                            R.color.textColor));
+                } else {
+                    toEnable.setEnabled(true);
+                    toEnable.setTextColor(ContextCompat.getColor(getApplicationContext(),
+                            R.color.white));
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+    }
 
 
     private void SigninWithPhone(PhoneAuthCredential credential) {
@@ -113,7 +152,7 @@ MainActivity2 extends AppCompatActivity {
 
             @Override
             public void onVerificationFailed(FirebaseException e) {
-                Toast.makeText(MainActivity2.this,"verification fialed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity2.this,"verification failed",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -124,6 +163,5 @@ MainActivity2 extends AppCompatActivity {
             }
         };
     }
-
 
 }

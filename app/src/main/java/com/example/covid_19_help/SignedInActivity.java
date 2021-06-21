@@ -21,7 +21,7 @@ public class SignedInActivity extends AppCompatActivity {
 
     TextView tvPhoneNumber,result1;
     Button btnSignOut;
-    RadioButton rb1,rb2,rb3,rb4;
+    Button rb1,rb2,rb3,rb4;
 
 
     String Result;
@@ -29,7 +29,10 @@ public class SignedInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signed_in);
-
+        rb1=findViewById(R.id.radio_id1);
+        rb2=findViewById(R.id.radio_id2);
+        rb3=findViewById(R.id.radio_id3);
+        rb4=findViewById(R.id.radio_id4);
 
 
         findViews();
@@ -95,7 +98,7 @@ public class SignedInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i1=new Intent(SignedInActivity.this,
-                        Homeisolation.class);
+                        HomeIsolationtTips.class);
                 startActivity(i1);
 
                 finish();
@@ -106,13 +109,10 @@ public class SignedInActivity extends AppCompatActivity {
     }
 
     private void findViews() {
-        tvPhoneNumber=findViewById(R.id.tv_2);
+        //tvPhoneNumber=findViewById(R.id.tv_2);
         btnSignOut=findViewById(R.id.btn_sign_out);
         result1=findViewById(R.id.result);
-        rb1=findViewById(R.id.radio_id1);
-        rb2=findViewById(R.id.radio_id2);
-        rb3=findViewById(R.id.radio_id3);
-        rb4=findViewById(R.id.radio_id4);
+
 
     }
 

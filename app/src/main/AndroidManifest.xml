@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid_19_help">
-        <activity android:name=".SignedInActivity"></activity>
+        <activity android:name=".HomeIsolationtTips"></activity>
+        <activity android:name=".SignedInActivity" />
         <activity android:name=".Homeisolation" />
         <activity android:name=".FourthActivity" />
         <activity android:name=".ThirdActivity" />
