@@ -56,10 +56,13 @@ MainActivity2 extends AppCompatActivity {
         enableOTPButton(etPhoneNumber, btnGenerateOTP, 10);
         enableOTPButton(etOTP, btnSignIn, 6);
 
+        //Send a request to generate OTP after entering a phone number.
         btnGenerateOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 phoneNumber=etPhoneNumber.getText().toString();
+                phoneNumber =
+                        phoneNumber.contains("+91")?phoneNumber:("+91"+phoneNumber);
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                         phoneNumber,                     // Phone number to verify
                         60,                           // Timeout duration
