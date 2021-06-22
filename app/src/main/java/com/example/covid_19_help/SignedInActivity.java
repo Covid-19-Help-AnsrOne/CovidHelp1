@@ -3,6 +3,7 @@ package com.example.covid_19_help;
 import android.content.Intent;
 // import android.support.v7.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -94,6 +95,17 @@ public class SignedInActivity extends AppCompatActivity {
             }
         });
 
+        rb3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(SignedInActivity.this,
+                        Vaccination.class);
+                startActivity(i1);
+
+                finish();
+            }
+        });
+
         rb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +119,11 @@ public class SignedInActivity extends AppCompatActivity {
 
 
     }
+
+  //  private void gotoUrl(String s) {
+    //    Uri uri = Uri.parse(s);
+      //  startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    //}
 
     private void findViews() {
         //tvPhoneNumber=findViewById(R.id.tv_2);
