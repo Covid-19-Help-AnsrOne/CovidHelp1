@@ -5,6 +5,16 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="verify_sign_in">Verify and Sign In</string>
     <string name="sign_out">sign out</string>
+
+    <string name="quick_checkup_message">Please note that your inputs will supplement the efforts being taken to contain the Corona pandemic and assess the Vaccination status and symptoms. Please help CovidHelp in helping India.</string>
+    <string name="age_prompt">As per your registration details your age. Pls confirm / change your age.</string>
+    <string name="vaccination_prompt">Have you taken the vaccination?</string>
+    <string name="age">Age</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="symptoms_prompt">Are you currently experiencing any of the following symptoms?</string>
+    <string name="confirm">Confirm</string>
+
 </resources>
 
 

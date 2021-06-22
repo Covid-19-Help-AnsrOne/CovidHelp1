@@ -29,7 +29,7 @@
         <Button
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:id="@+id/radio_id1"
+            android:id="@+id/btnIsolationTips"
             android:layout_marginTop="10dp"
             android:backgroundTint="#D3D3D3"
             android:text="Home Isolation Tips"
@@ -41,14 +41,14 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:backgroundTint="#D3D3D3"
-            android:id="@+id/radio_id2"
+            android:id="@+id/btnBookAppointment"
             android:text="Book appointment with Doctor"
             android:textSize="20dp"/>
 
         <Button
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:id="@+id/radio_id3"
+            android:id="@+id/btnVaccination"
             android:backgroundTint="#D3D3D3"
             android:textColor="@color/black"
             android:text="Vaccination "
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:backgroundTint="#D3D3D3"
-            android:id="@+id/radio_id4"
+            android:id="@+id/btnQuickCheckup"
             android:text="a quick checkup"
             android:textSize="20dp"/>
 

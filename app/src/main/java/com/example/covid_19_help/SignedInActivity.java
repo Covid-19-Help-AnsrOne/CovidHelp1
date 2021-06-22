@@ -3,26 +3,20 @@ package com.example.covid_19_help;
 import android.content.Intent;
 // import android.support.v7.app.AppCompatActivity;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.util.List;
 
 public class SignedInActivity extends AppCompatActivity {
 
     TextView tvPhoneNumber,result1;
     Button btnSignOut;
-    Button rb1,rb2,rb3,rb4;
+    Button btnIsolationTips, btnBookAppointment, btnVaccination, btnQuickCheckup;
 
 
     String Result;
@@ -30,11 +24,6 @@ public class SignedInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signed_in);
-        rb1=findViewById(R.id.radio_id1);
-        rb2=findViewById(R.id.radio_id2);
-        rb3=findViewById(R.id.radio_id3);
-        rb4=findViewById(R.id.radio_id4);
-
 
         findViews();
 
@@ -95,7 +84,7 @@ public class SignedInActivity extends AppCompatActivity {
             }
         });
 
-        rb3.setOnClickListener(new View.OnClickListener() {
+        btnVaccination.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i1=new Intent(SignedInActivity.this,
@@ -106,7 +95,7 @@ public class SignedInActivity extends AppCompatActivity {
             }
         });
 
-        rb1.setOnClickListener(new View.OnClickListener() {
+        btnIsolationTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i1=new Intent(SignedInActivity.this,
@@ -117,7 +106,13 @@ public class SignedInActivity extends AppCompatActivity {
             }
         });
 
-
+        //Open quick checkup activity by clicking on the button.
+        btnQuickCheckup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivityQuickCheckup();
+            }
+        });
     }
 
   //  private void gotoUrl(String s) {
@@ -129,9 +124,15 @@ public class SignedInActivity extends AppCompatActivity {
         //tvPhoneNumber=findViewById(R.id.tv_2);
         btnSignOut=findViewById(R.id.btn_sign_out);
         result1=findViewById(R.id.result);
-
-
+        btnIsolationTips =findViewById(R.id.btnIsolationTips);
+        btnBookAppointment =findViewById(R.id.btnBookAppointment);
+        btnVaccination =findViewById(R.id.btnVaccination);
+        btnQuickCheckup =findViewById(R.id.btnQuickCheckup);
     }
 
+    //Method to open quick checkup activity.
+    private void openActivityQuickCheckup() {
+        startActivity(new Intent(this, QuickCheckupActivity.class));
+    }
 
 }

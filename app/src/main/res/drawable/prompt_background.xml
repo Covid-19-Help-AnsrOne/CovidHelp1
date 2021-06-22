@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Background for quick checkup activity prompts.-->
+<shape  android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#3E2677"/>
+    <corners android:bottomRightRadius="@dimen/prompt_radius"
+        android:topLeftRadius="@dimen/prompt_radius"
+        android:topRightRadius="@dimen/prompt_radius"
+        android:bottomLeftRadius="4dp"/>
+
+</shape>
