@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +27,6 @@ import java.util.concurrent.TimeUnit;
 
 public class
 MainActivity2 extends AppCompatActivity {
-    String TAG = "Firebase";
    Button btnGenerateOTP, btnSignIn;
 
    EditText etPhoneNumber, etOTP;
@@ -113,13 +111,11 @@ MainActivity2 extends AppCompatActivity {
 
       auth = FirebaseAuth.getInstance();
       FirebaseUser user = auth.getCurrentUser();
-      Log.i(TAG, "" + (user == null));
 //       Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show();
       mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
          @Override
          public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-            Log.i(TAG, "onVerificationCompleted:" + phoneAuthCredential);
             Toast.makeText(MainActivity2.this, "verification completed", Toast.LENGTH_SHORT).show();
 
 
@@ -133,7 +129,6 @@ MainActivity2 extends AppCompatActivity {
          @Override
          public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
-             Log.i(TAG, "onCodeSent: " + s);
             verificationCode = s;
             Toast.makeText(MainActivity2.this, "Code sent", Toast.LENGTH_SHORT).show();
          }
