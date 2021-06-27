@@ -8,9 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignedInActivity extends AppCompatActivity {
 
@@ -18,7 +25,13 @@ public class SignedInActivity extends AppCompatActivity {
     Button btnSignOut;
     Button btnIsolationTips, btnBookAppointment, btnVaccination, btnQuickCheckup;
 
+    // creating a variable for our
+    // Firebase Database.
+    FirebaseDatabase firebaseDatabase;
 
+    // creating a variable for our Database
+    // Reference for Firebase.
+    DatabaseReference databaseReference;
     String Result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,50 +42,67 @@ public class SignedInActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message= intent.getStringExtra("msg");
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
 
-/*
-        q1 = intent.getStringExtra("q1");
-        q2 = intent.getStringExtra("q2");
-        q3 = intent.getStringExtra("q3");
-        q4 = intent.getStringExtra("q4");
+        //String phoneNumber2 = etPhoneNumber.getText().toString().trim();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        if(q1=="YES")
-        {
-            if(q2=="YES")
-            {
-                Result="BE HOME ISOLATED,YOU TESTED POSITIVE";
+        // below line is used to get reference for our database.
+        databaseReference = firebaseDatabase.getReference();
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String username=user.getPhoneNumber();
+
+                String q1 = snapshot.child(username).child("covidtest").getValue(String.class);
+                String q2 = snapshot.child(username).child("testresult").getValue(String.class);
+                String q3 = snapshot.child(username).child("travelled").getValue(String.class);
+                String q4 = snapshot.child(username).child("symptoms").getValue(String.class);
+
+
+                if(q1=="YES")
+                {
+                    if(q2=="YES")
+                    {
+                        result1.setText("BE HOME ISOLATED,YOU TESTED POSITIVE");
+                    }
+                    else
+                    {
+                        result1.setText("STAY HOME STAY SAFE,YOU TESTED NEGATIVE");
+                    }
+
+                }
+                else {
+
+                    if (q3 == "YES") {
+                        if (q4 == "YES") {
+                            result1.setText("PLEASE GO FOR COVID TESTING ,YOU TRAVELLED AND HAVE SYMPTOMS");
+                        }
+                        else  {
+                            result1.setText("PLEASE BE HOME ISOLATED,YOU TRAVELLED  ");
+                        }
+                    }
+                    else {
+                        if (q4 == "YES") {
+                            result1.setText("PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS");
+                        }
+                        else {
+                            result1.setText("STAY HOME STAY SAFE,YOU ARE NOT TRAVELLED AND DO NOT HAVE SYMPTOMS");
+                        }
+                    }
+                }
+
+                //result1.setText(q1);
+
             }
-            if(q2=="NO")
-            {
-                Result="STAY HOME STAY SAFE,YOU TESTED NEGATIVE";
-            }
 
-        }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        if(q3=="YES")
-        {
-            if(q4=="YES")
-                {
-                    Result="PLEASE GO FOR COVID TESTING ,YOU TRAVELLED AND HAVE SYMPTOMS";
-                }
-            if(q4=="NO")
-                {
-                    Result="PLEASE BE HOME ISOLATED,YOU TRAVELLED ";
-                }
-        }
-        if(q3=="NO")
-            {
-                if(q4=="YES")
-                {
-                    Result="PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS";
-                }
-                if(q4=="NO")
-                {
-                    Result="STAY HOME STAY SAFE";
-                }
             }
-*/
-        Result=message;
+        });
+
         result1.setText(Result);
 
         btnSignOut.setOnClickListener(new View.OnClickListener() {

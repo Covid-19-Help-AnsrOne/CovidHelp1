@@ -24,6 +24,11 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class
 MainActivity2 extends AppCompatActivity {
@@ -31,9 +36,17 @@ MainActivity2 extends AppCompatActivity {
 
    EditText etPhoneNumber, etOTP;
 
-   String phoneNumber, phoneNumber2, otp;
+   String phoneNumber, otp;
 
    FirebaseAuth auth;
+    // creating a variable for our
+    // Firebase Database.
+    FirebaseDatabase firebaseDatabase;
+
+    // creating a variable for our Database
+    // Reference for Firebase.
+    DatabaseReference databaseReference;
+
 
    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
    private String verificationCode;
@@ -45,7 +58,11 @@ MainActivity2 extends AppCompatActivity {
       findViews();
 
       StartFirebaseLogin();
-      phoneNumber2 = etPhoneNumber.getText().toString().trim();
+      //String phoneNumber2 = etPhoneNumber.getText().toString().trim();
+       firebaseDatabase = FirebaseDatabase.getInstance();
+
+       // below line is used to get reference for our database.
+       databaseReference = firebaseDatabase.getReference();
 
       // Enable/disable the buttons.
       enableOTPButton(etPhoneNumber, btnGenerateOTP, 10);
@@ -88,6 +105,16 @@ MainActivity2 extends AppCompatActivity {
                  @Override
                  public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
+
+
+                        String username=etPhoneNumber.getText().toString();
+                        username="+91"+username;
+                        databaseReference.child(username).child("covidtest").setValue("NILL");
+                        databaseReference.child(username).child("testresult").setValue("NILL");
+                        databaseReference.child(username).child("travelled").setValue("NILL");
+                        databaseReference.child(username).child("symptoms").setValue("NILL");
+
+
                        startActivity(new Intent(MainActivity2.this, FirstActivity.class));
                        finish();
                     } else {

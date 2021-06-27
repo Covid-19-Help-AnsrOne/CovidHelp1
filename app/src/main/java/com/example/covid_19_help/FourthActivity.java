@@ -1,5 +1,6 @@
 package com.example.covid_19_help;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,12 +9,24 @@ import android.view.View;
 import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FourthActivity extends AppCompatActivity {
 
 
     Button yes4, no4;
     String phoneNumber2;
+    // creating a variable for our
+    // Firebase Database.
+    FirebaseDatabase firebaseDatabase;
+    String str1;
+    // creating a variable for our Database
+    // Reference for Firebase.
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -21,27 +34,29 @@ public class FourthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fourth);
         yes4 = (Button)findViewById(R.id.yes4);
         no4 = (Button)findViewById(R.id.no4);
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+
+        //String phoneNumber2 = etPhoneNumber.getText().toString().trim();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        // below line is used to get reference for our database.
+        databaseReference = firebaseDatabase.getReference();
+
+
+
+
 
         yes4.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v)
             {
 
-                Intent intent = getIntent();
-
-                String str1 = intent.getStringExtra("q3");
-
                 Intent i1=new Intent(FourthActivity.this,
                         SignedInActivity.class);
 
-                if(str1=="YES")
-                {
-                    i1.putExtra("msg", "PLEASE GO FOR COVID TESTING ,YOU TRAVELLED AND HAVE SYMPTOMS");
-                }
-                else {
-                    i1.putExtra("msg", "PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS");
-                }
+                    String username=user.getPhoneNumber();
+                    databaseReference.child(username).child("symptoms").setValue("YES");
+
                 startActivity(i1);
 
                 finish();
@@ -51,25 +66,17 @@ public class FourthActivity extends AppCompatActivity {
 
         no4.setOnClickListener(new View.OnClickListener() {
 
+            String str2;
             @Override
             public void onClick(View v)
             {
 
-                Intent intent = getIntent();
-
-                String str1 = intent.getStringExtra("q3");
-
-
                 Intent i2=new Intent(FourthActivity.this,
                         SignedInActivity.class);
 
-                if(str1=="YES")
-                {
-                    i2.putExtra("msg", "PLEASE BE HOME ISOLATED,YOU TRAVELLED");
-                }
-                else {
-                    i2.putExtra("msg", "STAY HOME STAY SAFE");
-                }
+                    String username=user.getPhoneNumber();
+                    databaseReference.child(username).child("symptoms").setValue("NO");
+
                 startActivity(i2);
 
 

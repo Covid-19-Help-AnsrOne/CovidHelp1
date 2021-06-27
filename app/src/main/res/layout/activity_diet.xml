@@ -3,32 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16sp"
     tools:context=".DietActivity">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:id="@+id/dietcontent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:id="@+id/dietcontent"
+        android:layout_marginTop="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textSize="25dp"
         android:backgroundTint="@color/white"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        />
     <Button
         android:id="@+id/btn_sign_out2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="570dp"
+        android:layout_marginTop="510dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@color/colorAccent"
         android:text="@string/sign_out"
         android:textColor="@color/white" />
+
 </RelativeLayout>
