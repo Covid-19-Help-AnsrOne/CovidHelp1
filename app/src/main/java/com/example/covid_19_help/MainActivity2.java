@@ -65,6 +65,8 @@ MainActivity2 extends AppCompatActivity {
                     TimeUnit.SECONDS,                // Unit of timeout
                     MainActivity2.this,        // Activity (for callback binding)
                     mCallback);                      // OnVerificationStateChangedCallbacks
+
+            Toast.makeText(MainActivity2.this, "Please wait while your request is being process.", Toast.LENGTH_SHORT).show();
          }
       });
 
@@ -111,7 +113,6 @@ MainActivity2 extends AppCompatActivity {
 
       auth = FirebaseAuth.getInstance();
       FirebaseUser user = auth.getCurrentUser();
-//       Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show();
       mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
          @Override
