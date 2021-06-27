@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,10 @@ public class FirstActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        //Welcome message to the user.
+        Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show();
+
         yes1 = (Button)findViewById(R.id.yes1);
         no1 = (Button)findViewById(R.id.no1);
 

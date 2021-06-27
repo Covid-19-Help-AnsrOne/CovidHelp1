@@ -46,7 +46,8 @@
                 android:textColor="@color/white"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@id/quickMessage"
-                app:layout_constraintTop_toBottomOf="@id/quickMessage" />
+                app:layout_constraintTop_toBottomOf="@id/quickMessage"
+                tools:visibility="visible" />
 
             <!--Enter age-->
             <EditText
@@ -56,6 +57,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/prompt_answer_background"
                 android:hint="@string/age"
+                android:importantForAutofill="no"
                 android:inputType="number"
                 android:padding="@dimen/prompt_padding"
                 android:textAlignment="center"
@@ -63,7 +65,7 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@+id/btnConfirmAge"
                 app:layout_constraintTop_toBottomOf="@+id/tvAgePrompt"
-                android:importantForAutofill="no" />
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/tvVaccine"
@@ -76,7 +78,8 @@
                 android:textColor="@color/white"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@id/quickMessage"
-                app:layout_constraintTop_toBottomOf="@+id/etAge" />
+                app:layout_constraintTop_toBottomOf="@+id/etAge"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/btnYes"
@@ -92,7 +95,8 @@
                 android:textSize="18sp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@id/btnNo"
-                app:layout_constraintTop_toBottomOf="@+id/tvVaccine" />
+                app:layout_constraintTop_toBottomOf="@+id/tvVaccine"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/btnNo"
@@ -108,7 +112,8 @@
                 android:textSize="18sp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvVaccine" />
+                app:layout_constraintTop_toBottomOf="@id/tvVaccine"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/tvSymptoms"
@@ -121,7 +126,8 @@
                 android:textColor="@color/white"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@id/quickMessage"
-                app:layout_constraintTop_toBottomOf="@+id/tvVaccine" />
+                app:layout_constraintTop_toBottomOf="@+id/tvVaccine"
+                tools:visibility="visible" />
 
             <!--After entering the age press confirm.-->
             <Button
@@ -130,11 +136,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/confirm"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/etAge"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/etAge" />
+                app:layout_constraintTop_toTopOf="@+id/etAge"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -19,7 +19,7 @@ public class QuickCheckupActivity extends AppCompatActivity {
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_quick_checkup2);
+      setContentView(R.layout.activity_quick_checkup);
       findViews();
 
       //Prompt to ask the age of the use.
