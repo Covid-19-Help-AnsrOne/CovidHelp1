@@ -88,7 +88,7 @@ public class SignedInActivity extends AppCompatActivity {
                             result1.setText("PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS");
                         }
                         else {
-                            result1.setText("STAY HOME STAY SAFE,YOU ARE NOT TRAVELLED AND DO NOT HAVE SYMPTOMS");
+                            result1.setText("STAY HOME STAY SAFE,YOU HAVE NOT TRAVELLED AND DO NOT HAVE SYMPTOMS");
                         }
                     }
                 }

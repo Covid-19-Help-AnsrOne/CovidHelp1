@@ -28,6 +28,7 @@ public class Vaccination extends AppCompatActivity {
 
         // Circular progress bar before the url loads in the webView.
         progress = findViewById(R.id.progress);
+        
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
         web.setWebViewClient(new Callback());

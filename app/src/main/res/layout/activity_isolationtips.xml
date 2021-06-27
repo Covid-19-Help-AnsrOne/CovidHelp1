@@ -1,75 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--Scrolling for isolation tips activity.-->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Isolationtips">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/rectangle"
-
-        />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="580dp"
-        android:src="@drawable/rectangle1"
-
-        />
-
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/diet"
-        android:layout_marginTop="221dp"
-        android:text="Diet During Home Isolation"
-        android:textSize="25dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/novel"
-        android:layout_below="@+id/diet"
-        android:text="Best Novels to read"
-        android:textSize="25dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        />
+        >
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/remedies"
-        android:layout_below="@+id/novel"
-        android:text="Home Remedies"
-        android:textSize="25dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/end"
-        android:layout_below="@+id/remedies"
-        android:text="This will also end"
-        android:textSize="25dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nottodo"
-        android:layout_below="@+id/end"
-        android:text="what not to do ?"
-        android:textSize="25dp"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        />
+        <ImageView
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/rectangle"
 
-</RelativeLayout>
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="150dp"
+            android:src="@drawable/rectangle1"
+            android:layout_below="@id/buttons" />
+
+        <!--Buttons container.-->
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_below="@id/top"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/diet"
+                android:text="Diet During Home Isolation"
+                android:textSize="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/novel"
+                android:layout_below="@+id/diet"
+                android:text="Best Novels to read"
+                android:textSize="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/remedies"
+                android:layout_below="@+id/novel"
+                android:text="Home Remedies"
+                android:textSize="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/end"
+                android:layout_below="@+id/remedies"
+                android:text="This will also end"
+                android:textSize="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nottodo"
+                android:layout_below="@+id/end"
+                android:text="what not to do ?"
+                android:textSize="25dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
