@@ -91,18 +91,17 @@ public class SignedInActivity extends AppCompatActivity {
                         Vaccination.class);
                 startActivity(i1);
 
-                finish();
             }
         });
 
         btnIsolationTips.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(SignedInActivity.this,
-                        HomeIsolationtTips.class);
-                startActivity(i1);
+                Intent i2=new Intent(SignedInActivity.this,
+                        Isolationtips.class);
+                startActivity(i2);
 
-                finish();
+
             }
         });
 
