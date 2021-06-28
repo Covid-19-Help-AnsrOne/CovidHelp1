@@ -41,7 +41,6 @@ public class SignedInActivity extends AppCompatActivity {
         findViews();
 
         Intent intent = getIntent();
-        String message= intent.getStringExtra("msg");
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
 
         //String phoneNumber2 = etPhoneNumber.getText().toString().trim();
@@ -61,34 +60,41 @@ public class SignedInActivity extends AppCompatActivity {
                 String q4 = snapshot.child(username).child("symptoms").getValue(String.class);
 
 
-                if(q1=="YES")
+                if(q1=="YES") first:
                 {
                     if(q2=="YES")
                     {
                         result1.setText("BE HOME ISOLATED,YOU TESTED POSITIVE");
+                        break first;
+
                     }
                     else
                     {
                         result1.setText("STAY HOME STAY SAFE,YOU TESTED NEGATIVE");
+                        break first;
                     }
 
                 }
-                else {
+                else second:{
 
                     if (q3 == "YES") {
                         if (q4 == "YES") {
                             result1.setText("PLEASE GO FOR COVID TESTING ,YOU TRAVELLED AND HAVE SYMPTOMS");
+                            break second;
                         }
                         else  {
                             result1.setText("PLEASE BE HOME ISOLATED,YOU TRAVELLED  ");
+                            break second;
                         }
                     }
                     else {
                         if (q4 == "YES") {
                             result1.setText("PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS");
+                            break second;
                         }
                         else {
                             result1.setText("STAY HOME STAY SAFE,YOU HAVE NOT TRAVELLED AND DO NOT HAVE SYMPTOMS");
+                            break second;
                         }
                     }
                 }
@@ -102,8 +108,7 @@ public class SignedInActivity extends AppCompatActivity {
 
             }
         });
-
-        result1.setText(Result);
+        //result1.setText(Result);
 
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
