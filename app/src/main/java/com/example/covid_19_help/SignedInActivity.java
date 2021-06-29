@@ -60,9 +60,9 @@ public class SignedInActivity extends AppCompatActivity {
                 String q4 = snapshot.child(username).child("symptoms").getValue(String.class);
 
 
-                if(q1=="YES") first:
+                if(q1.equals("YES")) first:
                 {
-                    if(q2=="YES")
+                    if(q2.equals("YES"))
                     {
                         result1.setText("BE HOME ISOLATED,YOU TESTED POSITIVE");
                         break first;
@@ -77,8 +77,8 @@ public class SignedInActivity extends AppCompatActivity {
                 }
                 else second:{
 
-                    if (q3 == "YES") {
-                        if (q4 == "YES") {
+                    if (q3.equals("YES")) {
+                        if (q4.equals("YES")) {
                             result1.setText("PLEASE GO FOR COVID TESTING ,YOU TRAVELLED AND HAVE SYMPTOMS");
                             break second;
                         }
@@ -88,7 +88,7 @@ public class SignedInActivity extends AppCompatActivity {
                         }
                     }
                     else {
-                        if (q4 == "YES") {
+                        if (q4.equals("YES")) {
                             result1.setText("PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS");
                             break second;
                         }
