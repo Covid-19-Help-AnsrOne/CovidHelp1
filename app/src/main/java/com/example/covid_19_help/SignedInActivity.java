@@ -23,7 +23,7 @@ public class SignedInActivity extends AppCompatActivity {
 
     TextView tvPhoneNumber,result1;
     Button btnSignOut;
-    Button btnIsolationTips, btnBookAppointment, btnVaccination, btnQuickCheckup;
+    Button btnIsolationTips, btnBookAppointment, btnVaccination, btnQuickCheckup,btndoctor;
 
     // creating a variable for our
     // Firebase Database.
@@ -37,7 +37,7 @@ public class SignedInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signed_in);
-
+        btndoctor = findViewById(R.id.btnBookAppointment);
         findViews();
 
         Intent intent = getIntent();
@@ -124,6 +124,14 @@ public class SignedInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i1=new Intent(SignedInActivity.this,
                         Vaccination.class);
+                startActivity(i1);
+
+            }
+        });
+        btndoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(SignedInActivity.this,AppointmentwithDoctor.class);
                 startActivity(i1);
 
             }
