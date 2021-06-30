@@ -12,9 +12,21 @@
     <string name="age">Age</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="symptoms_prompt">Are you currently experiencing any of the following symptoms?</string>
+    <string name="how_many_prompt">HOW MANY DOSES?</string>
     <string name="confirm">Confirm</string>
 
+    <string name="dose_one">Stay home and make sure you have no Symptoms of Corona Virus while taking the second dose.</string>
+    <string name="dose_two">You\'re at low risk of transmitting Coronavirus, stay home to remain safe.</string>
+
+    <string name="dose_zero">Have you recently tested for Covid 19?</string>
+    <string name="positive_or_not">Are you tested Covid-19 POSITIVE?</string>
+    <string name="travelled">Have you travelled outside your city in the last two weeks?</string>
+    <string name="symptoms">Do you have any covid related symptoms?</string>
+
+    <string name="covid_positive">Remain in home isolation and let us help you during these tough times.</string>
+    <string name="covid_negative">You are safe. Avoid Going outside till necessary.</string>
+    <string name="you_have_symptoms">Go to your nearest Health Centre and get yourself checked for COVID-19.</string>
+    <string name="isolation">Please be in home isolation for 7 days.</string>
 </resources>
 
 

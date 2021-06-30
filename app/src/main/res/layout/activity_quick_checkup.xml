@@ -81,52 +81,57 @@
                 app:layout_constraintTop_toBottomOf="@+id/etAge"
                 tools:visibility="visible" />
 
-            <TextView
-                android:id="@+id/btnYes"
+            <LinearLayout
+                android:id="@+id/btnContain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/prompt_answer_background"
-                android:backgroundTint="@color/white"
-                android:padding="@dimen/prompt_padding"
-                android:text="@string/yes"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toStartOf="@id/btnNo"
-                app:layout_constraintTop_toBottomOf="@+id/tvVaccine"
-                tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/btnNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/prompt_answer_background"
-                android:backgroundTint="@color/white"
-                android:padding="@dimen/prompt_padding"
-                android:text="@string/no"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:orientation="horizontal"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvVaccine"
-                tools:visibility="visible" />
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/btnYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/prompt_padding"
+                    android:text="@string/yes"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/prompt_padding"
+                    android:text="@string/no"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
 
             <TextView
-                android:id="@+id/tvSymptoms"
+                android:id="@+id/tvHowMany"
                 android:layout_width="@dimen/prompt_size"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="66dp"
                 android:background="@drawable/prompt_background"
                 android:padding="@dimen/prompt_padding"
-                android:text="@string/symptoms_prompt"
+                android:text="@string/how_many_prompt"
                 android:textColor="@color/white"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="@id/quickMessage"
-                app:layout_constraintTop_toBottomOf="@+id/tvVaccine"
+                app:layout_constraintTop_toBottomOf="@+id/btnContain"
                 tools:visibility="visible" />
 
             <!--After entering the age press confirm.-->
@@ -142,6 +147,167 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/etAge"
                 tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/doses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHowMany"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tvOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="12dp"
+                    android:text="1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="12dp"
+                    android:text="2"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/tvDoseResult"
+                app:layout_constraintStart_toStartOf="@id/quickMessage"
+                app:layout_constraintTop_toBottomOf="@+id/doses"
+                android:layout_width="@dimen/prompt_size"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/prompt_background"
+                android:padding="@dimen/prompt_padding"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvCovidPositiveOrNot"
+                android:layout_width="@dimen/prompt_size"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="67dp"
+                android:background="@drawable/prompt_background"
+                android:padding="@dimen/prompt_padding"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/quickMessage"
+                app:layout_constraintTop_toBottomOf="@+id/tvHowMany"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/btnContainDoseZero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHowMany"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/btnYesDoseZero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/prompt_padding"
+                    android:text="@string/yes"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnNoDoseZero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/prompt_padding"
+                    android:text="@string/no"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnCovPosOrNot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCovidPositiveOrNot"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/btnPos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/prompt_padding"
+                    android:text="@string/yes"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnNeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prompt_answer_background"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/prompt_padding"
+                    android:text="@string/no"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvCovidPositiveMessage"
+                app:layout_constraintStart_toStartOf="@id/quickMessage"
+                app:layout_constraintTop_toBottomOf="@+id/btnCovPosOrNot"
+                android:layout_width="@dimen/prompt_size"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/prompt_background"
+                android:padding="@dimen/prompt_padding"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
