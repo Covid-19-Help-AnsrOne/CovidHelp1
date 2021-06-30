@@ -5,43 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white"
+    android:background="#14E91E63"
     android:gravity="center"
     android:orientation="vertical">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="0dp"
-        android:src="@drawable/stayhome"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/splash"
 
 
         />
 
-    <TextView
-        android:id="@+id/textview3"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="20dp"
-        android:text=" COVID-19 HELP"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        android:layout_marginLeft="40dp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="103dp" />
 
-    <TextView
-        android:id="@+id/textview2"
-        android:layout_width="wrap_content"
-        android:layout_height="112dp"
-        android:layout_marginTop="20dp"
-        android:text=" Please wear a mask"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="italic"
-        tools:ignore="MissingConstraints" />
+
+
 
 
 </LinearLayout>

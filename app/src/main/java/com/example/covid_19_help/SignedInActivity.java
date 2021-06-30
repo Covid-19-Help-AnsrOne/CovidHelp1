@@ -64,13 +64,13 @@ public class SignedInActivity extends AppCompatActivity {
                 {
                     if(q2.equals("YES"))
                     {
-                        result1.setText("BE HOME ISOLATED,YOU TESTED POSITIVE");
+                        result1.setText("Remain in home isolation and let us help you during these tough times");
                         break first;
 
                     }
                     else
                     {
-                        result1.setText("STAY HOME STAY SAFE,YOU TESTED NEGATIVE");
+                        result1.setText("You're Safe, Avoid Going outside until necessary.");
                         break first;
                     }
 
@@ -79,21 +79,21 @@ public class SignedInActivity extends AppCompatActivity {
 
                     if (q3.equals("YES")) {
                         if (q4.equals("YES")) {
-                            result1.setText("PLEASE GO FOR COVID TESTING ,YOU TRAVELLED AND HAVE SYMPTOMS");
+                            result1.setText("Go to your nearest Health Centre and get yourself checked for COVID-19");
                             break second;
                         }
                         else  {
-                            result1.setText("PLEASE BE HOME ISOLATED,YOU TRAVELLED  ");
+                            result1.setText("Please be in home isolation for 7 days  ");
                             break second;
                         }
                     }
                     else {
                         if (q4.equals("YES")) {
-                            result1.setText("PLEASE GO FOR COVID TESTING ,YOU ARE NOT TRAVELLED BUT HAVE SYMPTOMS");
+                            result1.setText("Go to your nearest Health Centre and get yourself checked for COVID-19");
                             break second;
                         }
                         else {
-                            result1.setText("STAY HOME STAY SAFE,YOU HAVE NOT TRAVELLED AND DO NOT HAVE SYMPTOMS");
+                            result1.setText("You're Safe, Avoid Going outside until necessary");
                             break second;
                         }
                     }
