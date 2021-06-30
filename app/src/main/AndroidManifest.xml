@@ -7,9 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid_19_help">
-        <activity android:name=".RemediesActivity"></activity>
+        <activity android:name=".AppointmentwithDoctor"></activity>
+        <activity android:name=".RemediesActivity" />
         <activity android:name=".NovelActivity" />
         <activity android:name=".NottodoActivity" />
         <activity android:name=".DietActivity" />
