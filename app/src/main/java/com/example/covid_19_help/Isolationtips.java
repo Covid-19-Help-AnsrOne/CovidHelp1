@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Isolationtips extends AppCompatActivity {
 
-    Button diet,novel,remedies,end,nottodo;
+    Button diet,novel,remedies,nottodo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,6 @@ public class Isolationtips extends AppCompatActivity {
         diet=findViewById(R.id.diet);
         novel=findViewById(R.id.novel);
         remedies=findViewById(R.id.remedies);
-        end=findViewById(R.id.end);
         nottodo=findViewById(R.id.nottodo);
 
         diet.setOnClickListener(new View.OnClickListener() {
@@ -52,15 +51,6 @@ public class Isolationtips extends AppCompatActivity {
         });
 
 
-        end.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i4=new Intent(Isolationtips.this,
-                        EndActivity.class);
-                startActivity(i4);
-
-            }
-        });
 
 
         nottodo.setOnClickListener(new View.OnClickListener() {

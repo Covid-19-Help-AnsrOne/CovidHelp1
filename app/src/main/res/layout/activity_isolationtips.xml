@@ -37,7 +37,8 @@
             android:layout_below="@id/top"
             android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_marginVertical="80dp">
 
             <Button
                 android:layout_width="match_parent"
@@ -64,16 +65,6 @@
                 android:id="@+id/remedies"
                 android:layout_below="@+id/novel"
                 android:text="Home Remedies"
-                android:textSize="25dp"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/end"
-                android:layout_below="@+id/remedies"
-                android:text="This will also end"
                 android:textSize="25dp"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/black" />

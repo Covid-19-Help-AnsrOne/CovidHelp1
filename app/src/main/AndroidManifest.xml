@@ -21,7 +21,6 @@
         <activity android:name=".RemediesActivity"></activity>
         <activity android:name=".NovelActivity" />
         <activity android:name=".NottodoActivity" />
-        <activity android:name=".EndActivity" />
         <activity android:name=".DietActivity" />
         <activity android:name=".Isolationtips" />
         <activity android:name=".QuickCheckupActivity" />

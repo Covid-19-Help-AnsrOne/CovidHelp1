@@ -15,47 +15,46 @@
         >
 
         <ImageView
-            android:id="@+id/top"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/rectangle"
-
-            />
-
-        <ImageView
-            android:layout_below="@id/btn_sign_out4"
-
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/rectangle1"
-
-            />
+            android:id="@+id/top" />
 
         <TextView
-            android:layout_below="@id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/remediescontent"
+            android:id="@+id/remediescontent1"
             android:layout_marginTop="20dp"
+            android:layout_below="@id/top"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/remediescontent2"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/remediescontent1"
+            android:layout_marginStart="20dp"
+            android:textStyle="normal"
             android:layout_marginEnd="20dp"
             android:textSize="25dp"
             android:backgroundTint="@color/white"
             android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/btn_sign_out4"
+
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_below="@id/remediescontent"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:background="@color/colorAccent"
-            android:text="@string/sign_out"
-            android:textColor="@color/white" />
+            android:layout_height="150dp"
+            android:src="@drawable/rectangle1"
+            android:layout_below="@id/remediescontent2"
+            android:layout_marginTop="40dp" />
+
 
     </RelativeLayout>
 </ScrollView>

@@ -15,47 +15,47 @@
         >
 
         <ImageView
+            android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_alignParentTop="true"
             android:src="@drawable/rectangle"
+            android:id="@+id/top" />
 
-            android:id="@+id/top"
-            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nottodocontent1"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/top"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nottodocontent2"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/nottodocontent1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="25dp"
+            android:textStyle="normal"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="40dp"
-            android:layout_below="@id/btn_sign_out6"
             android:src="@drawable/rectangle1"
-            />
+            android:layout_below="@id/nottodocontent2"
+            android:layout_marginTop="40dp" />
 
-
-
-                <TextView
-                    android:layout_below="@id/top"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nottodocontent"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:textSize="25dp"
-                    android:layout_marginTop="20dp"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_below="@id/nottodocontent"
-                    android:layout_marginTop="40dp"
-                    android:id="@+id/btn_sign_out6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:background="@color/colorAccent"
-                    android:text="@string/sign_out"
-                    android:textColor="@color/white" />
 
     </RelativeLayout>
 </ScrollView>
