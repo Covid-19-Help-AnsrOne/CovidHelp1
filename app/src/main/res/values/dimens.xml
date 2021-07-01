@@ -4,4 +4,5 @@
     <dimen name="padding_checkup">10dp</dimen>
     <dimen name="prompt_size">280dp</dimen>
     <dimen name="prompt_padding">10dp</dimen>
+    <dimen name="prompt_text_size">18sp</dimen>
 </resources>
